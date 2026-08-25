@@ -1,0 +1,19 @@
+{
+  "name": "semantic paraphrase retrieval",
+  "requires": "semantic_embedding",
+  "_why": "Queries share no wording with their target, so the keyword leg cannot answer them. Distractors sit first so a zero-signal retriever scores 0.000 instead of winning ties by insertion order.",
+  "documents": [
+    {"id": "badge",   "content": "办公室门禁卡失效请到行政前台重新写卡。"},
+    {"id": "expense", "content": "报销单据超过三个月不予受理，需附部门负责人签字。"},
+    {"id": "repo",    "content": "代码仓库权限申请由所属团队负责人在权限平台审批。"},
+    {"id": "db",      "content": "数据库主从切换失败时联系平台团队值班工程师。"},
+    {"id": "payroll", "content": "薪资发放异常由人力资源部门核实，不经过平台团队。"},
+    {"id": "vpn",     "content": "VPN 拨号无法建立连接时提交基础设施支持单。"}
+  ],
+  "queries": [
+    {"text": "DB 挂了找谁",                        "expects": "数据库主从切换失败"},
+    {"text": "工资少发了怎么办",                    "expects": "薪资发放异常"},
+    {"text": "远程办公连不上内网",                  "expects": "VPN 拨号无法建立连接"},
+    {"text": "database failover on-call escalation", "expects": "数据库主从切换失败"}
+  ]
+}

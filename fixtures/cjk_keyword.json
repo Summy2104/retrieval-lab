@@ -1,0 +1,14 @@
+{
+  "name": "cjk keyword retrieval",
+  "_why": "Answerable by word overlap on purpose — this one guards the tokenizer, not semantics.",
+  "documents": [
+    {"id": "db",      "content": "数据库故障需要联系平台团队处理，升级路径为值班工程师。"},
+    {"id": "payroll", "content": "薪资异常由人力资源部门处理，不走平台团队。"},
+    {"id": "vpn",     "content": "VPN 接入问题由基础设施支持团队处理。"}
+  ],
+  "queries": [
+    {"text": "数据库故障", "expects": "数据库故障需要联系平台团队"},
+    {"text": "薪资异常",   "expects": "薪资异常由人力资源部门处理"},
+    {"text": "VPN 接入",  "expects": "VPN 接入问题由基础设施支持团队"}
+  ]
+}
